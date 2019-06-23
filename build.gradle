@@ -50,6 +50,6 @@ ext {
     recyclerViewVersion = '1.0.0'
     roomVersion = '2.0.0'
     constraintLayoutVersion = '1.1.3'
-    lifecycleExtensionsVersion = '2.1.0-alpha02'
+    lifecycleExtensionsVersion = '2.2.0-alpha01'
     savedStateVersion = '1.0.0-alpha01'
 }

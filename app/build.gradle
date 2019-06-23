@@ -48,6 +48,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$savedStateVersion"
 
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
     annotationProcessor "androidx.room:room-compiler:$roomVersion"

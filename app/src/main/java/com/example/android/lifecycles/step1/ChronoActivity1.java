@@ -18,7 +18,14 @@ package com.example.android.lifecycles.step1;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.SavedStateVMFactory;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
+
+import android.os.SystemClock;
 import android.widget.Chronometer;
+import android.widget.TextView;
 
 import com.example.android.codelabs.lifecycle.R;
 
@@ -30,8 +37,18 @@ public class ChronoActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Chronometer chronometer = findViewById(R.id.chronometer);
+        final TextView textView = findViewById(R.id.timer_textview);
 
-        chronometer.start();
+        ChronometerViewModel chronometerViewModel =
+                ViewModelProviders.of(this, new SavedStateVMFactory(this)).get(ChronometerViewModel.class);
+
+
+        chronometerViewModel.getStartTime().observe(this, new Observer<Long>() {
+            @Override
+            public void onChanged(Long time) {
+                textView.setText(time + " seconds elapsed.");
+            }
+        });
+
     }
 }
